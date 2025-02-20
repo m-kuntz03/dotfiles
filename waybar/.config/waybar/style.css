@@ -65,6 +65,7 @@ window#waybar.empty #window {
   color: @lavender;
   border-radius: 1rem;
   margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 #custom-notification {
