@@ -88,7 +88,7 @@ output * bg /home/mkuntz/Pictures/bkg.jpg fill
 
     # Start your launcher
     bindsym $mod+d exec $menu
-    bindsym $mod+Tab exec wofi --show run
+    bindsym $mod+Tab exec wofi --show drun
 
     # Launch different applications
     bindsym $mod+e exec thunar

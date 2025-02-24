@@ -1,0 +1,5 @@
+-progress-
+[starship] show active micromamba env
+
+-done-
+[wofi] changed to drun
