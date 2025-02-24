@@ -20,7 +20,7 @@ $kotlin\
 $haskell\
 $python\
 [](fg:teal bg:blue)\
-$custom_micromamba\
+$conda\
 [](fg:blue bg:purple)\
 $time\
 [ ](fg:purple)\
@@ -166,15 +166,11 @@ symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
-[env_var]
-variable = "env_value"
-default = ""
+[conda]
+symbol = ""
+style = "fg:mantle bg:blue"
+format =  "[ $symbol( $environment) ]($style)"
 
-[custom_micromamba]
-command = "basename $(micromamba info --json | jq -r '.active_prefix // empty')"
-when = "micromamba info --json | jq -e '.active_prefix_name'"
-style = "bg:mantle"
-format = '[[ $output ](fg:#83a598 bg:color_bg3)]($style)'
 
 [time]
 disabled = false
