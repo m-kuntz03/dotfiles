@@ -11,9 +11,17 @@
          "disable-scroll": true,
          "sort-by-name": true,
 	 "format": "{icon}",
+	 //"format-icons": {
+	 //	"default": "",
+	 //	"focused": ""
 	 "format-icons": {
-		"default": "",
-		"focused": ""
+		"1": "",
+		"2": "",
+		"3": "󰈹",
+		"4": "",
+		"urgent": "",
+		"focused": "",
+		"default": ""
 	 }
     },
 

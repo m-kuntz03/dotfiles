@@ -7,7 +7,7 @@
 }
 
 #waybar {
-  background: @base;
+  background: rgba(30,30,46,10);
   color: @text;
   margin: 0;
   padding: 0;
