@@ -5,7 +5,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/window"],
-    "modules-right": ["tray", "pulseaudio", "network", "battery", "backlight", "custom/notification", "clock"],
+    "modules-right": ["custom/updates", "tray", "pulseaudio", "network", "battery", "backlight", "custom/notification", "clock"],
 
     "sway/workspaces": {
          "disable-scroll": true,
@@ -88,14 +88,14 @@
         "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-	    "notification": "<span foreground='red'><sup></sup></span>",
-            "none": "",
-            "dnd-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-none": "",
-            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "inhibited-none": "",
-            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-inhibited-none": ""
+	    "notification": "󰅸",
+            "none": "󰂜",
+            "dnd-notification": "󰪑",
+            "dnd-none": "󰪑",
+            "inhibited-notification": "󰅸",
+            "inhibited-none": "󰂜",
+            "dnd-inhibited-notification": "󰪑",
+            "dnd-inhibited-none": "󰪑"
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
@@ -103,6 +103,14 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
-    }
+    },
+    "custom/updates":{
+	"tooltip": false,
+        "format": "{} 󰚰",
+        "exec": "aptitude search '~U' | wc -l",
+        "exec-if": "[[ $(aptitude search '~U' | wc -l) != 0 ]]",
+        "interval": 3600,
+        "on-click": "kitty sudo apt update"
+    },
 
 }
