@@ -30,7 +30,8 @@
          "format": "{app_id}",
          "rewrite": {
 		"firefox_firefox": "firefox",
-		"org.gnome.Nautilus": "Nautilus"
+		"org.gnome.Nautilus": "Nautilus",
+		"evince": "Document Viewer"
 	 }
     },
 
