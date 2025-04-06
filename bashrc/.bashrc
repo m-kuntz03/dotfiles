@@ -131,6 +131,8 @@ alias q3d_doc='micromamba activate q3d_env && code ~/Documents'
 alias q3d_gal='micromamba activate q3d_env && code ~/Documents/GALENA'
 alias q3d_pro='micromamba activate q3d_env && code ~/Documents/Projects'
 alias tar_ext='tar -xf'
+alias carta='/home/mkuntz/.local/bin/CARTA.AppImage'
+alias cisco='/opt/cisco/secureclient/bin/vpnui'
 
 neofetch
 

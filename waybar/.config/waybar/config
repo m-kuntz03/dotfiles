@@ -3,7 +3,7 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["clock", "sway/window"], // ["sway/workspaces"],
+    "modules-left": ["clock"], // ["sway/workspaces", "sway/window"],
     "modules-center": ["sway/workspaces"], // ["sway/window"],
     "modules-right": ["custom/updates", "tray", "pulseaudio", "network", "battery", "backlight", "custom/notification"], // ["custom/updates", "tray", "pulseaudio", "network", "battery", "backlight", "custom/notification", "clock"],
 
