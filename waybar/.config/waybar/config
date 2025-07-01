@@ -5,7 +5,7 @@
     // Choose the order of the modules
     "modules-left": ["clock"], // ["sway/workspaces", "sway/window"],
     "modules-center": ["sway/workspaces"], // ["sway/window"],
-    "modules-right": ["custom/updates", "tray", "pulseaudio", "network", "battery", "backlight", "custom/notification"], // ["custom/updates", "tray", "pulseaudio", "network", "battery", "backlight", "custom/notification", "clock"],
+    "modules-right": ["tray", "pulseaudio", "network", "battery", "backlight", "custom/notification"], // ["custom/updates", "tray", "pulseaudio", "network", "battery", "backlight", "custom/notification", "clock"],
 
     "sway/workspaces": {
          "format": "{icon}",
@@ -88,7 +88,7 @@
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
 	"tooltip-format": "{percent} %",
 	"on-click": "gnome-control-center"
     },
@@ -116,7 +116,7 @@
 	"tooltip": false,
         "format": "{} 󰚰",
         "exec": "aptitude search '~U' | wc -l",
-        "exec-if": "[[ $(aptitude search '~U' | wc -l) != 0 ]]",
+        "exec-if": "test $(aptitude search '~U' | wc -l) -ne 0",
         "interval": 3600,
         "on-click": "kitty sudo apt update"
     },

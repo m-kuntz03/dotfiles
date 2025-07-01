@@ -75,7 +75,6 @@ window#waybar.empty #window {
 #tray,
 #clock,
 #battery,
-#backlight,
 #pulseaudio,
 #custom-notification,
 #custom-updates,
@@ -112,6 +111,11 @@ window#waybar.empty #window {
 }
 
 #backlight {
+  background-color: @filling;
+  padding: 0.5rem 0.8rem;
+  padding-right: 1.1rem;
+  margin: 5px 0px;
+  margin-left: -0.5rem;
   color: @yellow;
   border-radius: 0px 0.4rem 0.4rem 0px;
 }
