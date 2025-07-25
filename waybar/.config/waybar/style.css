@@ -78,6 +78,7 @@ window#waybar.empty #window {
 #pulseaudio,
 #custom-notification,
 #custom-updates,
+#custom-shutdown,
 #network {
   background-color: @filling;
   padding: 0.5rem 0.8rem;
@@ -93,6 +94,13 @@ window#waybar.empty #window {
 
 #custom-notification {
   color: @text;
+  border-radius: 0.4rem;
+  margin-left: 0.4rem;
+  padding-right: 0.9rem;
+}
+
+#custom-shutdown {
+  color: @red;
   border-radius: 0.4rem;
   margin-left: 0.4rem;
   padding-right: 0.9rem;
