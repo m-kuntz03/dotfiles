@@ -33,7 +33,7 @@
     },
     "clock": {
         "timezone": "Europe/Berlin",
-        "format": "{:%d. %b,  %H:%M }",
+        "format": "{:%d. %b, %H:%M }",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
                     "mode"          : "year",
