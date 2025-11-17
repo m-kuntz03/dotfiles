@@ -1,0 +1,14 @@
+#!/bin/sh
+
+STATE_FILE="$HOME/.cache/gammastep_state"
+DAY_TEMP=6500
+NIGHT_TEMP=3500
+
+if [ -f "$STATE_FILE" ] && [ "$(cat "$STATE_FILE")" = "night" ]; then
+    gammastep -O $DAY_TEMP
+    echo "day" > "$STATE_FILE"
+else
+    gammastep -O $NIGHT_TEMP
+    echo "night" > "$STATE_FILE"
+fi
+

@@ -1,0 +1,15 @@
+set $background #111111
+set $filling #222222
+set $crust #11111b
+
+set $text #d1ffff
+
+set $focus #cccccc
+set $unfocus #666666
+set $urgent #FF6666
+
+set $green     #a6e3a1
+set $yellow    #f9e2af
+set $red       #f38ba8
+set $maroon    #eba0ac
+set $mauve     #cba6f7

@@ -1,0 +1,114 @@
+#!/usr/bin/env bash
+# Minimal Sway-compatible screenshot helper for Debian
+# Usage:
+#   MKDebian-screenshot [mode] [dest]
+# Modes:
+#   region     - draw a region with slurp (default for explicit 'region')
+#   fullscreen - capture the focused output
+#   smart      - attempt region selection, but expand tiny clicks to whole output (default)
+# Dest:
+#   both       - save file and copy to clipboard (default)
+#   clipboard  - only copy to clipboard
+#   file       - only save file
+set -euo pipefail
+
+# Config
+[[ -f ~/.config/user-dirs.dirs ]] && source ~/.config/user-dirs.dirs
+OUTPUT_DIR="$HOME/Pictures/screenshots"
+
+if [[ ! -d "$OUTPUT_DIR" ]]; then
+  notify-send "Screenshot directory does not exist: $OUTPUT_DIR" -u critical -t 3000 2>/dev/null || echo "Missing dir: $OUTPUT_DIR" >&2
+  exit 1
+fi
+
+MODE="${1:-smart}"
+DEST="${2:-both}"
+
+timestamp() { date +'%Y-%m-%d_%H-%M-%S'; }
+
+# Get focused output's rectangle as "X,Y WxH"
+get_focused_output_rect() {
+  local out
+  out=$(swaymsg -t get_workspaces -r | jq -r '.[] | select(.focused==true) | .output')
+  swaymsg -t get_outputs -r | jq -r --arg out "$out" '.[] | select(.name==$out) | "\(.rect.x),\(.rect.y) \(.rect.width)x\(.rect.height)"'
+}
+
+# Get all output rectangles (one per line "X,Y WxH")
+get_all_output_rects() {
+  swaymsg -t get_outputs -r | jq -r '.[] | "\(.rect.x),\(.rect.y) \(.rect.width)x\(.rect.height)"'
+}
+
+# Find the output rect that contains point X,Y; prints the rect or empty
+rect_containing_point() {
+  local px=$1 py=$2
+  while IFS= read -r rect; do
+    if [[ "$rect" =~ ^([0-9+-]+),([0-9+-]+)[[:space:]]([0-9]+)x([0-9]+)$ ]]; then
+      rx=${BASH_REMATCH[1]}
+      ry=${BASH_REMATCH[2]}
+      rw=${BASH_REMATCH[3]}
+      rh=${BASH_REMATCH[4]}
+      if (( px >= rx && px < rx+rw && py >= ry && py < ry+rh )); then
+        printf '%s\n' "$rect"
+        return 0
+      fi
+    fi
+  done <<< "$(get_all_output_rects)"
+  return 1
+}
+
+SELECTION=""
+
+case "$MODE" in
+  region)
+    SELECTION=$(slurp 2>/dev/null || true)
+    ;;
+  fullscreen)
+    SELECTION=$(get_focused_output_rect)
+    ;;
+  smart|*)
+    # Try an interactive slurp first
+    SELECTION=$(slurp 2>/dev/null || true)
+
+    # If the selection is tiny (likely a click) expand to the output it was in
+    if [[ "$SELECTION" =~ ^([0-9+-]+),([0-9+-]+)[[:space:]]([0-9]+)x([0-9]+)$ ]]; then
+      sel_w=${BASH_REMATCH[3]}
+      sel_h=${BASH_REMATCH[4]}
+      if (( sel_w * sel_h < 20 )); then
+        click_x=${BASH_REMATCH[1]}
+        click_y=${BASH_REMATCH[2]}
+        target_rect=$(rect_containing_point "$click_x" "$click_y" || true)
+        if [[ -n "$target_rect" ]]; then
+          SELECTION="$target_rect"
+        else
+          # fallback to focused output
+          SELECTION=$(get_focused_output_rect)
+        fi
+      fi
+    fi
+
+    # If user cancelled slurp entirely, fall back to focused output
+    if [ -z "$SELECTION" ]; then
+      SELECTION=$(get_focused_output_rect)
+    fi
+    ;;
+esac
+
+[ -z "$SELECTION" ] && exit 0
+
+outfile="$OUTPUT_DIR/screenshot-$(timestamp).png"
+
+# Capture & deliver
+if [[ "$DEST" == "clipboard" ]]; then
+  grim -g "$SELECTION" - | wl-copy
+  notify-send "Screenshot copied to clipboard" -t 1500 2>/dev/null || true
+elif [[ "$DEST" == "file" ]]; then
+  grim -g "$SELECTION" "$outfile"
+  notify-send "Saved screenshot: $(basename "$outfile")" -t 1500 2>/dev/null || true
+else
+  # both: save then copy
+  grim -g "$SELECTION" "$outfile"
+  wl-copy < "$outfile"
+  notify-send "Saved screenshot: $(basename "$outfile") and copied to clipboard" -t 1500 2>/dev/null || true
+fi
+
+exit 0

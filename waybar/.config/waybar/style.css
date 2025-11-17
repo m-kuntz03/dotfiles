@@ -100,44 +100,44 @@ window#waybar.empty #window {
 }
 
 #custom-shutdown {
-  color: @red;
+/*  color: @red; */
   border-radius: 0.4rem;
   margin-left: 0.4rem;
   padding-right: 0.9rem;
 }
-
+/*
 #battery {
   color: @green;
 }
 
 #battery.charging {
-  color: @green;
+  color: @yellow;
 }
 
 #battery.warning:not(.charging) {
   color: @red;
 }
-
+*/
 #backlight {
   background-color: @filling;
   padding: 0.5rem 0.8rem;
   padding-right: 1.1rem;
   margin: 5px 0px;
   margin-left: -0.5rem;
-  color: @yellow;
+/*  color: @yellow; */
   border-radius: 0px 0.4rem 0.4rem 0px;
 }
 
 #pulseaudio {
-  color: @maroon;
+/*  color: @maroon; */
   border-radius: 0.4rem 0px 0px 0.4rem;
   margin-left: 0.4rem;
 }
-
+/*
 #network {
   color: @mauve;
 }
-
+*/
 #custom-music {
   color: @mauve;
   border-radius: 0.4rem;
