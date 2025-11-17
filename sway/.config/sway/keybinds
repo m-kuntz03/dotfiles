@@ -84,7 +84,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+e exec thunar
 bindsym $mod+b exec firefox
 bindsym $mod+t exec teams-for-linux
-bindsym Ctrl+Shift+e exec emote
+bindsym $mod+Shift+e exec emote
 
 ### --- Screenshots --- ###
 bindsym $mod+p exec ~/MKDebian/MKDebian-screenshot smart clipboard

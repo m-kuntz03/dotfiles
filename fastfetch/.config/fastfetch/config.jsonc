@@ -1,0 +1,93 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "auto",
+    "color": {
+        "1": "red",
+        "2": "magenta"
+    }
+/*    "type": "file",
+    "source": "~/Documents/ascii-art.txt",
+    "color": {             // Override logo colors
+        "1": "blue",
+        "2": "green"
+    }*/
+  },
+  "display": {
+    "key": {
+        "width": 12,
+        "type": "both"
+    },
+    "bar": {
+        "width": 10,       // Width of percentage bars
+        "char": {
+            "elapsed": "■", // Character for elapsed portion
+            "total": "-",    // Character for total portion
+        },
+    },
+    "percent": {
+        "type": 2
+    }
+  },
+  "modules": [
+    "title",
+    "separator",
+    {
+        "type": "os",
+        "key": "OS",
+        "keyColor": "red",
+    },
+    {
+        "type": "kernel",
+        "key": "Kernel",
+        "keyColor": "red",
+    },
+    {
+        "type": "host",
+        "key": "Host",
+        "keyColor": "green",
+    },
+    {
+        "type": "wm",
+        "key": "WM",
+        "keyColor": "green",
+    },
+/*    {
+        "type": "uptime",
+        "key": "UP",
+        "keyColor": "yellow",
+    }, */
+    {
+        "type": "terminal",
+        "key": "Term",
+        "keyColor": "magenta",
+    },
+    {
+        "type": "packages",
+        "key": "PKG",
+        "keyColor": "magenta",
+    },
+    {
+        "type": "cpu",
+        "key": "CPU",
+        "keyColor": "blue",
+    },
+    {
+        "type": "gpu",
+        "key": "GPU",
+        "keyColor": "blue",
+    },
+    {
+        "type": "memory",
+        "key": "Memory",
+        "keyColor": "yellow",
+    },
+    {
+        "type": "disk",
+        "key": "Disk",
+        "keyColor": "yellow",
+    },
+    "break",
+    "colors"
+  ]
+}

@@ -135,6 +135,6 @@ alias tar_ext='tar -xf'
 alias carta='/home/mkuntz/.local/bin/CARTA.AppImage'
 alias cisco='/opt/cisco/secureclient/bin/vpnui'
 
-neofetch
+fastfetch
 
 eval "$(starship init bash)"
