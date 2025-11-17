@@ -30,6 +30,7 @@
     }
   },
   "modules": [
+    "break",
     "title",
     "separator",
     {
