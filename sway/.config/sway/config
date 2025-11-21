@@ -22,7 +22,7 @@ titlebar_border_thickness 0
 include /etc/sway/config-vars.d/*
 include /etc/sway/config.d/*
 
-output * bg /home/mkuntz/Pictures/bkg-fw.jpg fill
+output * bg /home/mkuntz/Pictures/bkg-op.jpg fill
 
 
 exec swayidle -w \

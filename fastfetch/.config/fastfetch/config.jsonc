@@ -4,14 +4,13 @@
     "type": "auto",
     "color": {
         "1": "red",
-        "2": "magenta"
-    }
-/*    "type": "file",
-    "source": "~/Documents/ascii-art.txt",
+        "2": "cyan"
+    } 
+/*    "source": "~/.config/fastfetch/ascii-art.txt",
     "color": {             // Override logo colors
         "1": "blue",
         "2": "green"
-    }*/
+    } */
   },
   "display": {
     "key": {
@@ -61,12 +60,12 @@
     {
         "type": "terminal",
         "key": "Term",
-        "keyColor": "magenta",
+        "keyColor": "yellow",
     },
     {
         "type": "packages",
         "key": "PKG",
-        "keyColor": "magenta",
+        "keyColor": "yellow",
     },
     {
         "type": "cpu",
@@ -81,12 +80,12 @@
     {
         "type": "memory",
         "key": "Memory",
-        "keyColor": "yellow",
+        "keyColor": "magenta",
     },
     {
         "type": "disk",
         "key": "Disk",
-        "keyColor": "yellow",
+        "keyColor": "magenta",
     },
     "break",
     "colors"
