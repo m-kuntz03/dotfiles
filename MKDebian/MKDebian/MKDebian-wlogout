@@ -1,0 +1,5 @@
+#! /bin/bash
+
+# runs the wlogout command
+
+wlogout -b 1 -p layer-shell --margin-top 350 --margin-bottom 350 --margin-left 800 --margin-right 800

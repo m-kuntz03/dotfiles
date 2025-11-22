@@ -1,0 +1,42 @@
+* {
+	background-image: none;
+}
+
+@import "grayscale.css";
+
+window {
+	background-color: transparent;
+}
+button {
+    color: @text;
+	background-color: @filling;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 10%;
+    outline-style: none;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+button:focus, button:active, button:hover {
+	background-color: @unfocus;
+	outline-style: none;
+}
+
+#lock {
+    background-image: image(url("./icons/lock_white.png"), url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("./icons/logout_white.png"), url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+
+#shutdown {
+    background-image: image(url("./icons/shutdown_white.png"), url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("./icons/reboot_white.png"), url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+}

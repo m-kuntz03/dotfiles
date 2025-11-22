@@ -5,10 +5,10 @@
 */
 
 @define-color background #111111;
-@define-color filling #333333;
+@define-color filling #222222;
 @define-color crust  #11111b;
 
-@define-color text #eeeeee;
+@define-color text #d1ffff;
 
 @define-color focus #cccccc;
 @define-color unfocus #666666;

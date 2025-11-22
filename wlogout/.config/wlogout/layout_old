@@ -1,14 +1,8 @@
 {
     "label" : "lock",
-    "action" : "swaylock",
+    "action" : "swaylock -f -c 000000 --indicator-radius 100 --indicator-idle-visible --indicator-caps-lock",
     "text" : "Lock [l]",
-    "keybind" : "l"
-}
-{
-    "label" : "hibernate",
-    "action" : "systemctl hibernate",
-    "text" : "Hibernate [h]",
-    "keybind" : "h"
+    "keybind" : "l",
 }
 {
     "label" : "logout",
@@ -19,14 +13,8 @@
 {
     "label" : "shutdown",
     "action" : "systemctl poweroff",
-    "text" : "Shutdown [s]",
-    "keybind" : "s"
-}
-{
-    "label" : "suspend",
-    "action" : "systemctl suspend",
-    "text" : "Suspend [u]",
-    "keybind" : "u"
+    "text" : "Shutdown [p]",
+    "keybind" : "p"
 }
 {
     "label" : "reboot",

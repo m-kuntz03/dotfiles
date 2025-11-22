@@ -123,7 +123,7 @@
     "custom/shutdown":{
     	"tooltip": false,
     	"format": "⏻",
-    	"on-click": "wlogout -b 2 -p layer-shell --margin-top 250 --margin-bottom 250 --margin-left 400 --margin-right 400"
+    	"on-click": "~/MKDebian/MKDebian-wlogout"
     },
 
 }

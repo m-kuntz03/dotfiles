@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /bin/bash
 
 STATE_FILE="$HOME/.cache/gammastep_state"
 DAY_TEMP=6500
