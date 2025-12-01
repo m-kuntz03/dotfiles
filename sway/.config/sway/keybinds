@@ -83,7 +83,9 @@ bindsym $mod+Tab exec /home/mkuntz/.config/rofi/launchers/type-4/launcher.sh
 bindsym $mod+Return exec kitty
 bindsym $mod+e exec thunar
 bindsym $mod+b exec firefox
+bindsym $mod+Shift+b exec brave-browser --enable-features=UseOzonePlatform --ozone-platform=wayland
 bindsym $mod+t exec teams-for-linux
+# bindsym $mod+Shift+t exec brave-browser --enable-features=UseOzonePlatform --ozone-platform=wayland --app=https://teams.microsoft.com/
 bindsym $mod+Shift+e exec emote
 
 ### --- Screenshots --- ###

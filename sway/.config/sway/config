@@ -45,3 +45,9 @@ include ~/.config/sway/monitors
 include ~/.config/sway/inputs
 include ~/.config/sway/modes
 include ~/.config/sway/keybinds
+
+exec systemctl --user import-environment
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+set $xdg_desktop_portal 'sway'
+exec dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP=$xdg_desktop_portal
+
