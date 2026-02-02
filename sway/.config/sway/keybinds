@@ -8,7 +8,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+Ctrl+x exec shutdown now
 set $logout_menu wlogout -b 2 -p layer-shell --margin-top 250 --margin-bottom 250 --margin-left 400 --margin-right 400
 bindsym $mod+Shift+x exec ~/MKDebian/MKDebian-wlogout
-#bindsym $mod+Shift+n exec swaync-client -t -sw
+
+bindsym $mod+n exec swaync-client -t -sw
 bindsym $mod+Shift+m exec wl-mirror eDP-1 &
 bindsym $mod+Shift+t exec kitty -e btop 
 bindsym $mod+Shift+i exec kitty -e sudo aptitude 
